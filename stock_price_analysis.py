@@ -88,10 +88,6 @@ def process_data_for_labels(ticker):
     df = pd.read_csv(f'stock_data/{ticker}.csv', header=0)
     
 
-    if df.iloc[1, 0] == 'XEL':
-        df = df.drop(index=1)
-    
-
     df['Date'] = pd.to_datetime(df['Date'])
     df.set_index('Date', inplace=True)
 
